@@ -38,6 +38,7 @@ dara/DaraSharedMem
 dara/*.log
 dara/*.json
 dara/s.out
-dara/daramockups
+dara/daramockups/*
+dara/bin
 
 *.bak

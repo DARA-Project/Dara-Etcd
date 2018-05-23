@@ -1,11 +1,13 @@
 #!/bin/bash
 dgo='/usr/local/go/bin/go'
 PROCESSES=3
+#Scheduler Directory
+SchedulerDir=github.com/DARA-Projects/GoDist-Scheduler
 
 CLUSTERSTRING=""
 
 killall -9 etcd
-killall scheduler
+killall GoDist-Scheduler
 
 if [ $1 == "-k" ];then
     exit
@@ -21,8 +23,9 @@ done
 
 #do i need to alloc the shared memory here?
 
+#Install the scheduler
 echo INSTALLING THE SCHEDULER
-$dgo install github.com/wantonsolutions/dara/scheduler
+$dgo install $SchedulerDir
 
 
 
@@ -34,7 +37,7 @@ exec 666<> ./DaraSharedMem
 
 #$1 is either -w (record) or -r (replay)
 
-scheduler $1 1> s.out 2> s.out &
+GoDist-Scheduler $1 1> s.out 2> s.out &
 #gnome-terminal -e 'bash -c "ls; sleep 3"'
 #gnome-terminal --execute 'echo dog'
 #gnome-terminal -e 'bash -c "scheduler -r; sleep 5"'
