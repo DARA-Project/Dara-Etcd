@@ -1,3 +1,10 @@
+# Dara modifications
+
+Currently, there are only 2 modifications (2 additional files):
+
++ `dgo_build` : The build script for building etcd with Dara
++ `run.sh` : A very very simple run script for testing etcd with Dara. Probably need to get the run scripts from Stew's old branch
+
 # etcd
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/etcd-io/etcd?style=flat-square)](https://goreportcard.com/report/github.com/etcd-io/etcd)
